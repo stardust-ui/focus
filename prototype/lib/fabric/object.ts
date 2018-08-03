@@ -1,4 +1,4 @@
-import { Stylesheet } from '@uifabric/merge-styles';
+// import { Stylesheet } from '@uifabric/merge-styles';
 
 // Initialize global window id.
 const CURRENT_ID_PROPERTY = '__currentId__';
@@ -79,12 +79,12 @@ export function filteredAssign(isAllowed: (propName: string) => boolean, target:
   return target;
 }
 
-// Configure ids to reset on stylesheet resets.
-const stylesheet = Stylesheet.getInstance();
+// // Configure ids to reset on stylesheet resets.
+// const stylesheet = Stylesheet.getInstance();
 
-if (stylesheet && stylesheet.onReset) {
-  stylesheet.onReset(resetIds);
-}
+// if (stylesheet && stylesheet.onReset) {
+//   stylesheet.onReset(resetIds);
+// }
 
 /**
  * Generates a unique id in the global scope (this spans across duplicate copies of the same library.)

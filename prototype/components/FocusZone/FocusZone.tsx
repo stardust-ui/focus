@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types'
 import { FocusZoneDirection, FocusZoneTabbableElements, IFocusZone, IFocusZoneProps } from './FocusZone.types';
 import {
   BaseComponent,
@@ -19,7 +20,7 @@ import {
   isElementTabbable,
   shouldWrapFocus,
   createRef
-} from '../../Utilities';
+} from '../../lib/fabric';
 
 const IS_FOCUSABLE_ATTRIBUTE = 'data-is-focusable';
 const IS_ENTER_DISABLED_ATTRIBUTE = 'data-disable-click-on-enter';
@@ -43,6 +44,11 @@ const ALLOWED_INPUT_TYPES = ['text', 'number', 'password', 'email', 'tel', 'url'
 const ALLOW_VIRTUAL_ELEMENTS = false;
 
 export class FocusZone extends BaseComponent<IFocusZoneProps, {}> implements IFocusZone {
+  static propTypes = {
+    isCircularNavigation: PropTypes.bool,
+    direction: PropTypes.number,
+  }
+  
   public static defaultProps: IFocusZoneProps = {
     isCircularNavigation: false,
     direction: FocusZoneDirection.bidirectional

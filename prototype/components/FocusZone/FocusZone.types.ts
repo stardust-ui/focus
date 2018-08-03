@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FocusZone } from './FocusZone';
-import { IRefObject } from '../../Utilities';
+import { IRefObject } from '../../lib/fabric';
 
 /**
  * FocusZone component class interface.
